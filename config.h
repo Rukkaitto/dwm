@@ -5,13 +5,18 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack:size=11", "Font Awesome 5 Free:size=11" };
+static const char *fonts[]          = {"Hack:size=11", "FontAwesome:size=12"};
 static const char dmenufont[]       = "Hack:size=11";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#eeeeee";
-static const char col_gray4[]       = "#222222";
-static const char col_cyan[]        = "#eeeeee";
+//background color
+static const char col_gray1[]       = "#333333";
+//inactive window border color
+static const char col_gray2[]       = "#333333";
+//font color
+static const char col_gray3[]       = "#ffffff";
+//current tag font color
+static const char col_gray4[]       = "#ffffff";
+//current tag background color
+static const char col_cyan[]        = "#ffae00";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -19,15 +24,20 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "" };
+//static const char *tags[] = { "", "", "", "", "", "6", "7", "8", "9" };
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+   { "qutebrowser",  NULL,       NULL,       1 << 0,       0,           -1 }, // Launches on tag 1
+   { NULL,           NULL,       "shell",    1 << 1,       0,           -1 },
+   { NULL,           NULL,       "dropdown",     ~0,       1,           -1},
+   { "Zathura",      NULL,       NULL,       1 << 2,       0,           -1 },
+   { NULL,           NULL,       "mpv",      1 << 3,       0,           -1 },
+   { NULL,           NULL,       "feh",      1 << 4,       0,           -1 },
 };
 
 /* layout(s) */
