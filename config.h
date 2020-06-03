@@ -16,7 +16,7 @@ static const char col_gray3[]       = "#ffffff";
 //current tag font color
 static const char col_gray4[]       = "#ffffff";
 //current tag background color
-static const char col_cyan[]        = "#ffae00";
+static const char col_cyan[]        = "#8080ff";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
