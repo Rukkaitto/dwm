@@ -3,6 +3,7 @@
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {"Hack:size=11", "FontAwesome:size=12"};
@@ -31,14 +32,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-   { "qutebrowser",  NULL,       NULL,       1 << 0,       0,           -1 }, // Launches on tag 1
-   { NULL,           NULL,       "shell",    1 << 1,       0,           -1 },
-   { NULL,           NULL,       "dropdown",     ~0,       1,           -1},
-   { NULL,           NULL,       "floating",      0,       1,           -1},
-   { "Zathura",      NULL,       NULL,       1 << 2,       0,           -1 },
-   { NULL,           NULL,       "mpv",      1 << 3,       0,           -1 },
-   { NULL,           NULL,       "feh",      1 << 4,       0,           -1 },
+	/* class      instance    title       tags mask     isfloating     isterminal   noswallow   monitor */
+   { "qutebrowser",  NULL,       NULL,       1 << 0,       0,           0,           0,           -1 }, // Launches on tag 1
+   { "St",           NULL,       NULL,       1 << 1,       0,           1,           0,           -1 },
+   { "Zathura",      NULL,       NULL,       1 << 2,       0,           0,           0,           -1 },
+   //{ NULL,           NULL,       "mpv",      1 << 3,       0,           0,           0,           -1 },
+   //{ NULL,           NULL,       "feh",      1 << 4,       0,           0,           0,           -1 },
 };
 
 /* layout(s) */
