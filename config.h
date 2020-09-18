@@ -36,7 +36,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating     isterminal   noswallow   monitor */
    { "qutebrowser",  NULL,       NULL,       1 << 0,       0,           0,           0,           -1 }, // Launches on tag 1
-   { "St",           NULL,       NULL,       1 << 1,       0,           1,           0,           -1 },
+   { "st-256color",  NULL,       NULL,       1 << 1,       0,           1,           0,           -1 },
    { "Zathura",      NULL,       NULL,       1 << 2,       0,           0,           0,           -1 },
    //{ NULL,           NULL,       "mpv",      1 << 3,       0,           0,           0,           -1 },
    //{ NULL,           NULL,       "feh",      1 << 4,       0,           0,           0,           -1 },
